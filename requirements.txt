@@ -1,0 +1,13 @@
+streamlit
+yfinance
+pandas
+matplotlib
+datetime
+prophet
+scikit-learn
+numpy
+plotly
+google-generativeai
+statsmodels
+vnstock
+tensorflow
