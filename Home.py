@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Multi-App", layout="centered")
+st.set_page_config(page_title="Multi-App",page_icon="🏠", layout="centered")
 st.sidebar.title("Thanh công cụ")
 st.sidebar.info("Sử dụng thanh công cụ để chuyển giữa các App.")
 
