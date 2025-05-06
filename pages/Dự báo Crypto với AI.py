@@ -36,7 +36,6 @@ st.markdown(
 )
 
 # Page setup
-st.set_page_config(page_icon="📊")
 st.markdown(
     """
     <h1 style='color: darkblue;'>📊 Phân tích và Dự báo giá Crypto bằng thuật toán AI- Máy học</h1>
