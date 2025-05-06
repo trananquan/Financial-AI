@@ -105,7 +105,6 @@ def generate_pie_chart(data):
     st.pyplot(fig)
 
 # Streamlit app UI
-st.set_page_config(page_icon="📊",layout="wide")
 st.title("📊 Ứng dụng phân tích chỉ tiêu tài chính bằng AI")
 st.write("Nhập vào các chỉ tiêu tài chính quan trọng, App sẽ xuất ra báo cáo phân tích sử dụng mô hình AI Gemini. Sau đó, có thể so sánh với các doanh nghiệp khác trong ngành")
 
