@@ -27,7 +27,7 @@ end_date = st.date_input("Lựa chọn ngày kết thúc:", value=date.today())
 if symbol:
     # Fetch the stock data
     df = Quote(symbol=symbol, source='VCI')
-    data = df.history(
+    data = (
         start=start_date.strftime('%Y-%m-%d'), 
         end=end_date.strftime('%Y-%m-%d'), 
         interval='1D'
