@@ -59,8 +59,7 @@ if symbol:
 
     st.write(f"Dữ liệu giá tiền điện tử {symbol} từ ngày {start_date} đến ngày {end_date}:")
     st.dataframe(crypto_data[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']])
-    crypto_data.rename(columns={"Date": "Date", "Open": "open", "High": "high", "Low": "low", "Close": "close", "Volume": "volume"}, inplace=True)
-
+    crypto_data.rename(columns={"Date": "time", "Open": "open", "High": "high", "Low": "low", "Close": "close", "Volume": "volume"}, inplace=True)
 
 # Checkboxes for indicators
 st.subheader("📈 Chỉ báo kỹ thuật")
