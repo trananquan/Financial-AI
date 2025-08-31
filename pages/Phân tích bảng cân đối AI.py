@@ -15,7 +15,7 @@ st.markdown(
 symbol = st.text_input("Nhập mã chứng khoán vào đây (ví dụ, VCB):", value="VCB")
 
 if symbol:  # Ensure symbol is not empty
-    stock = Vnstock().stock(symbol=symbol, source='TCBS')
+    stock = Vnstock().stock(symbol=symbol, source='VCI')
 
     # Exporting results as DataFrames
     balance_sheet_year = stock.finance.balance_sheet(period='year', lang='vi', dropna=True)
