@@ -334,7 +334,7 @@ def get_gemini_recommendation(symbol, summary):
     Fetch buy/sell recommendation from Gemini AI based on the summary of the last 30 days.
     """
     # Set the Google Generative AI API key (authentication)
-    API_KEY = "AIzaSyAD5-tRTbhtr17baOAVq307Fguv5oa49hY"
+    API_KEY = "AIzaSyDgpMnXlUyC-Ebi7z4xRkdmxBzvfWkcw2Q"
 
     # Authenticate with Google Generative AI
     genai.configure(api_key=API_KEY)
