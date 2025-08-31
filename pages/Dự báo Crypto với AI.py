@@ -59,7 +59,7 @@ if symbol:
     end=end_date.strftime('%Y-%m-%d'),
     interval="1d",
     auto_adjust=True,   # Giữ nguyên cột OHLC
-    ignore_tz=True 
+    
     )
     crypto_data.reset_index(inplace=True)
 
