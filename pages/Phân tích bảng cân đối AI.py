@@ -108,46 +108,6 @@ if symbol:  # Ensure symbol is not empty
 
     st.write("")
  # Selectbox for choosing a data field (column) to display in the graph
-# Exclude specific fields from the selectbox
-    st.markdown(
-    "<h3 style='color: darkblue;'> Hiển thị biểu đồ theo chỉ tiêu</h3>",
-    unsafe_allow_html=True
-)
-    excluded_fields = ['CP', 'Năm', 'Kỳ']
-    available_fields = [col for col in dataframes[selected_indicator].columns if col not in excluded_fields]
-
-    # Selectbox for choosing a data field (column) to display in the graph
-    field_name = st.selectbox(
-        "Chọn trường dữ liệu để hiển thị biểu đồ:",
-        available_fields
-    )
-
-    # Selectbox for choosing the chart style
-    chart_style = st.selectbox(
-        "Chọn kiểu biểu đồ:",
-        ["Biểu đồ cột", "Biểu đồ đường", "Biểu đồ miền"]
-    )
-
-    # Button to display the bar chart
-    if st.button("Hiển thị biểu đồ"):     
-        # Extract the data for the selected field
-        chart_data = dataframes[selected_indicator][['period', field_name]].dropna()
-
-        # Plot the bar chart
-        fig, ax = plt.subplots()
-        if chart_style == "Biểu đồ cột":
-           ax.bar(chart_data['period'], chart_data[field_name], color='darkblue')
-           ax.set_title(f"Biểu đồ {field_name} theo Năm (Dạng cột)")
-        elif chart_style == "Biểu đồ đường":
-           ax.plot(chart_data['period'], chart_data[field_name], marker='o', color='darkblue')
-           ax.set_title(f"Biểu đồ {field_name} theo Năm (Dạng đường)")
-        elif chart_style == "Biểu đồ miền":
-           ax.fill_between(chart_data['period'], chart_data[field_name], color='darkblue', alpha=0.5)
-           ax.set_title(f"Biểu đồ {field_name} theo Năm (Dạng miền)")
-
-        ax.set_xlabel("Năm")
-        ax.set_ylabel(field_name)
-        st.pyplot(fig)
 
 else:
     st.write("Vui lòng nhập mã chứng khoán để xem kết quả.")
