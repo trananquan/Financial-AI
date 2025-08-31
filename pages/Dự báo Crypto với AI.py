@@ -54,7 +54,13 @@ end_date = st.date_input("Ngày cuối", value=date.today())
 
 if symbol:
     # Fetch cryptocurrency data
-    crypto_data = yf.download(symbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
+    crypto_data = yf.download(tickers=symbol,
+    start=start_date.strftime('%Y-%m-%d'),
+    end=end_date.strftime('%Y-%m-%d'),
+    interval="1d",
+    auto_adjust=False,   # Giữ nguyên cột OHLC
+    threads=True
+    )
     crypto_data.reset_index(inplace=True)
 
     st.write(f"Dữ liệu giá tiền điện tử {symbol} từ ngày {start_date} đến ngày {end_date}:")
