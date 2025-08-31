@@ -52,6 +52,14 @@ symbol = st.selectbox("Chọn mã Crypto (vd: BTC-USD)",
 start_date = st.date_input("Ngày đầu", value=date(2024, 1, 1))
 end_date = st.date_input("Ngày cuối", value=date.today())
 
+if symbol:
+    # Fetch cryptocurrency data
+    crypto_data = yf.download(symbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
+    crypto_data.reset_index(inplace=True)
+
+    st.write(f"Dữ liệu giá tiền điện tử {symbol} từ ngày {start_date} đến ngày {end_date}:")
+    st.dataframe(crypto_data[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']])
+    crypto_data.rename(columns={"Date": "time", "Open": "open", "High": "high", "Low": "low", "Close": "close", "Volume": "volume"}, inplace=True)
 
 
 # Checkboxes for indicators
