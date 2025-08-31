@@ -131,18 +131,18 @@ if symbol:  # Ensure symbol is not empty
     # Button to display the bar chart
     if st.button("Hiển thị biểu đồ"):     
         # Extract the data for the selected field
-        chart_data = dataframes[selected_indicator][['Năm', field_name]].dropna()
+        chart_data = dataframes[selected_indicator][['year', field_name]].dropna()
 
         # Plot the bar chart
         fig, ax = plt.subplots()
         if chart_style == "Biểu đồ cột":
-           ax.bar(chart_data['Năm'], chart_data[field_name], color='darkblue')
+           ax.bar(chart_data['year'], chart_data[field_name], color='darkblue')
            ax.set_title(f"Biểu đồ {field_name} theo Năm (Dạng cột)")
         elif chart_style == "Biểu đồ đường":
-           ax.plot(chart_data['Năm'], chart_data[field_name], marker='o', color='darkblue')
+           ax.plot(chart_data['year'], chart_data[field_name], marker='o', color='darkblue')
            ax.set_title(f"Biểu đồ {field_name} theo Năm (Dạng đường)")
         elif chart_style == "Biểu đồ miền":
-           ax.fill_between(chart_data['Năm'], chart_data[field_name], color='darkblue', alpha=0.5)
+           ax.fill_between(chart_data['year'], chart_data[field_name], color='darkblue', alpha=0.5)
            ax.set_title(f"Biểu đồ {field_name} theo Năm (Dạng miền)")
 
         ax.set_xlabel("Năm")
