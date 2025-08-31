@@ -53,13 +53,30 @@ start_date = st.date_input("Ngày đầu", value=date(2024, 1, 1))
 end_date = st.date_input("Ngày cuối", value=date.today())
 
 if symbol:
-    # Fetch cryptocurrency data
-    crypto_data = yf.download(symbol, start=start_date.strftime('%Y-%m-%d'), end=end_date.strftime('%Y-%m-%d'))
+   crypto_data = yf.download(
+    symbol, 
+    start=start_date.strftime('%Y-%m-%d'), 
+    end=end_date.strftime('%Y-%m-%d')
+)
+
+if crypto_data.empty:
+    st.error("❌ Không có dữ liệu cho khoảng thời gian này. Vui lòng chọn ngày khác.")
+else:
     crypto_data.reset_index(inplace=True)
 
     st.write(f"Dữ liệu giá tiền điện tử {symbol} từ ngày {start_date} đến ngày {end_date}:")
     st.dataframe(crypto_data[['Date', 'Open', 'High', 'Low', 'Close', 'Volume']])
-    crypto_data.rename(columns={"Date": "time", "Open": "open", "High": "high", "Low": "low", "Close": "close", "Volume": "volume"}, inplace=True)
+
+    # Đổi tên cột sau khi hiển thị
+    crypto_data.rename(columns={
+        "Date": "time", 
+        "Open": "open", 
+        "High": "high", 
+        "Low": "low", 
+        "Close": "close", 
+        "Volume": "volume"
+    }, inplace=True)
+
 
 # Checkboxes for indicators
 st.subheader("📈 Chỉ báo kỹ thuật")
