@@ -131,7 +131,7 @@ if symbol:  # Ensure symbol is not empty
     # Button to display the bar chart
     if st.button("Hiển thị biểu đồ"):     
         # Extract the data for the selected field
-        chart_data = dataframes[selected_indicator][['Năm', field_name]].dropna()
+        chart_data = dataframes[selected_indicator][['year', field_name]].dropna()
 
         # Plot the bar chart
         fig, ax = plt.subplots()
