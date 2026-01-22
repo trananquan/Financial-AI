@@ -30,7 +30,7 @@ if symbol:
     data = df.history(
         start=start_date.strftime('%Y-%m-%d'), 
         end=end_date.strftime('%Y-%m-%d'), 
-        interval='1d'
+        interval='1D'
     )
     
    
