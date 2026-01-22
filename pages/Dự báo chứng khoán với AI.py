@@ -11,7 +11,7 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, LSTM
 from sklearn.ensemble import RandomForestRegressor
-from vnstock.explorer.kbs import Quote, Company, Finance, Trading
+from vnstock import Listing, Quote, Company, Finance, Trading 
 
 # Input for stock symbol
 st.markdown(
