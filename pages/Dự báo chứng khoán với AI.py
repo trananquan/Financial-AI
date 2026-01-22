@@ -13,9 +13,9 @@ from tensorflow.keras.layers import Dense, LSTM
 from sklearn.ensemble import RandomForestRegressor
 from vnstock import Listing, Quote, Company, Finance, Trading 
 
-from vnstock import Quote
-quote = Quote(symbol='ACB', source='KBS')
-quote.history(length='90', interval='d')
+from vnstock import Listing
+listing = Listing(source='KBS')
+listing.all_symbols()
 
 # Input for stock symbol
 st.markdown(
