@@ -13,6 +13,10 @@ from tensorflow.keras.layers import Dense, LSTM
 from sklearn.ensemble import RandomForestRegressor
 from vnstock import Listing, Quote, Company, Finance, Trading 
 
+from vnstock import Quote
+quote = Quote(symbol='ACB', source='KBS')
+quote.history(length='90', interval='d')
+
 # Input for stock symbol
 st.markdown(
     "<h1 style='color: darkblue;'>📊 Dự báo chứng khoán Việt Nam dựa trên phân tích AI và Máy học</h1>",
