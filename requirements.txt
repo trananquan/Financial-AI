@@ -9,7 +9,6 @@ plotly
 google-generativeai
 statsmodels
 tensorflow
-vnstock==0.2.5   # phiên bản ổn định
-tenacity==8.2.2  # tương thích Python 3.10–3.11
-requests==2.31.0
-pandas==2.1.0
+vnstock
+tenacity
+requests
