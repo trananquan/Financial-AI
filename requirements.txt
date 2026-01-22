@@ -1,6 +1,5 @@
 streamlit
 yfinance
-pandas
 matplotlib
 datetime
 prophet
@@ -9,5 +8,8 @@ numpy
 plotly
 google-generativeai
 statsmodels
-vnstock
 tensorflow
+vnstock==0.2.5   # phiên bản ổn định
+tenacity==8.2.2  # tương thích Python 3.10–3.11
+requests==2.31.0
+pandas==2.1.0
