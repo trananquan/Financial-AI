@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestRegressor
 from vnstock import Listing, Quote, Company, Finance, Trading 
 
 from vnstock import Listing
-listing = Listing(source='KBS')
+listing = Listing(source='VCI')
 listing.all_symbols()
 
 # Input for stock symbol
