@@ -9,6 +9,6 @@ plotly
 google-generativeai
 statsmodels
 tensorflow
-vnstock==3.4.0
+vnstock
 tenacity
 requests
