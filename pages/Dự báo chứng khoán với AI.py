@@ -13,10 +13,6 @@ from tensorflow.keras.layers import Dense, LSTM
 from sklearn.ensemble import RandomForestRegressor
 from vnstock import Listing, Quote, Company, Finance, Trading 
 
-from vnstock import Listing
-listing = Listing(source='VCI')
-listing.all_symbols()
-
 # Input for stock symbol
 st.markdown(
     "<h1 style='color: darkblue;'>📊 Dự báo chứng khoán Việt Nam dựa trên phân tích AI và Máy học</h1>",
