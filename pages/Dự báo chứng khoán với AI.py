@@ -21,12 +21,12 @@ st.markdown(
 symbol = st.text_input("Nhập mã chứng khoán vào đây (ví dụ, VCB):", value="VCB")
 
 # Date pickers for start and end dates
-start_date = st.date_input("Lựa chọn ngày bắt đầu:", value=date(2024, 1, 1))
+start_date = st.date_input("Lựa chọn ngày bắt đầu:", value=date(2025, 1, 1))
 end_date = st.date_input("Lựa chọn ngày kết thúc:", value=date.today())
 
 if symbol:
     # Fetch the stock data
-    df = Quote(symbol='VCB', source='VCI')
+    df = Quote(symbol=symbol, source='tcbs')
     data = df.history(
         start=start_date.strftime('%Y-%m-%d'), 
         end=end_date.strftime('%Y-%m-%d'), 
